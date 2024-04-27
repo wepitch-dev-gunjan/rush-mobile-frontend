@@ -1,17 +1,15 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:rush/pages/email_password.dart';
 
-class EmailScreen extends StatefulWidget
-{
-const EmailScreen({super.key});
+class EmailScreen extends StatefulWidget {
+  const EmailScreen({super.key});
 
-@override
-State<EmailScreen> createState() => _EmailScreenState();
+  @override
+  State<EmailScreen> createState() => _EmailScreenState();
 }
 
-class _EmailScreenState extends State<EmailScreen>{
-
-
+class _EmailScreenState extends State<EmailScreen> {
   @override
   Widget build(BuildContext context) {
     // TODO: implement build
@@ -22,7 +20,7 @@ class _EmailScreenState extends State<EmailScreen>{
     double fem = MediaQuery.of(context).size.width / baseWidth;
     double ffem = fem * 0.97;
 
-    return  Scaffold(
+    return Scaffold(
         backgroundColor: const Color(0xFFFFFAF4),
         appBar: AppBar(
           backgroundColor: Colors.transparent,
@@ -31,12 +29,10 @@ class _EmailScreenState extends State<EmailScreen>{
                 Navigator.pop(context);
               },
               icon: const Icon(Icons.arrow_back_ios, color: Color(0xff000000))),
-
         ),
-        body:  Column(
+        body: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-
             Padding(
               padding: EdgeInsets.fromLTRB(35, 20, 35, 5),
               child: Text(
@@ -44,8 +40,7 @@ class _EmailScreenState extends State<EmailScreen>{
                 style: TextStyle(
                     fontSize: 40,
                     color: Color(0xff000000),
-                    fontWeight: FontWeight.w700
-                ),
+                    fontWeight: FontWeight.w700),
               ),
             ),
             Padding(
@@ -55,8 +50,7 @@ class _EmailScreenState extends State<EmailScreen>{
                 style: TextStyle(
                     fontSize: 16,
                     color: Color(0xff000000),
-                    fontWeight: FontWeight.w500
-                ),
+                    fontWeight: FontWeight.w500),
               ),
             ),
             Padding(
@@ -66,24 +60,22 @@ class _EmailScreenState extends State<EmailScreen>{
                 style: TextStyle(
                     fontSize: 14,
                     color: Color(0xff000000),
-                    fontWeight: FontWeight.w600
-                ),
+                    fontWeight: FontWeight.w600),
               ),
             ),
             Padding(
-              padding:  EdgeInsets.fromLTRB(25,5,0,0),
+              padding: EdgeInsets.fromLTRB(25, 5, 0, 0),
               child: SizedBox(
                 width: mWidth * 0.85,
                 child: TextFormField(
                   cursorColor: Colors.black,
-                  decoration:  InputDecoration(
-                  fillColor: Colors.white,
-                  border: OutlineInputBorder(
+                  decoration: InputDecoration(
+                    fillColor: Colors.white,
+                    border: OutlineInputBorder(
                       borderRadius: BorderRadius.circular(12.0),
                       borderSide: const BorderSide(color: Color(0xFFBFBCBA)),
                     ),
                   ),
-
                 ),
               ),
             ),
@@ -91,10 +83,10 @@ class _EmailScreenState extends State<EmailScreen>{
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Padding(
-                  padding:  EdgeInsets.fromLTRB(1, mHeight * 0.40 ,0,0),
+                  padding: EdgeInsets.fromLTRB(1, mHeight * 0.40, 0, 0),
                   child: SizedBox(
                     width: mWidth * 0.80,
-                    height:mHeight * 0.065,// <-- match_parent
+                    height: mHeight * 0.065, // <-- match_parent
                     child: ElevatedButton(
                       style: ElevatedButton.styleFrom(
                           elevation: 1,
@@ -104,7 +96,12 @@ class _EmailScreenState extends State<EmailScreen>{
                           foregroundColor: Colors.white,
                           padding: const EdgeInsets.all(8),
                           backgroundColor: const Color(0xffFF7918)),
-                      onPressed: () {  },
+                      onPressed: () {
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => const EmailPasswrod_Screen()));
+                      },
                       child: const Text('Continue',
                           style: TextStyle(
                               fontSize: 15, fontWeight: FontWeight.bold)),
@@ -113,27 +110,7 @@ class _EmailScreenState extends State<EmailScreen>{
                 ),
               ],
             )
-
-
-
-
-
-
-
-
           ],
-
-
-        )
-
-    );
-
-
-
-
-
+        ));
   }
-
-
-
 }

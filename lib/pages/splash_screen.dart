@@ -1,11 +1,7 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
-
-import 'email_password.dart';
-import 'email_screen.dart';
-import 'loginsignup_screen.dart';
-import 'name_screen.dart';
+import 'package:rush/homepagecontainer.dart';
+import 'package:rush/pages/home_screen.dart';
+import 'package:rush/pages/loginsignup_screen.dart';
 import 'otp_screen.dart';
 
 class SplashScreen extends StatefulWidget
@@ -24,7 +20,7 @@ class _SplashScreenState extends State<SplashScreen> {
       Navigator.push(
           context,
           MaterialPageRoute(
-              builder: (context) => const OtpScreen() ));
+              builder: (context) => const LoginSignupScreen() ));
     });
 
 
